@@ -8,6 +8,7 @@
 
 // Event handling, user interaction is what starts the code execution.
 
+var counter = 3;
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
@@ -24,12 +25,14 @@ var createNewTaskElement=function(taskString){
     var checkBox=document.createElement("input");//checkbx
     checkBox.classList.add("input");
     checkBox.classList.add("checkbox");
+    checkBox.setAttribute( 'id', `checkbox-${ counter }`)
     checkBox.type="checkbox";
 
     //label
     var label=document.createElement("label");//label
     label.classList.add("label");
     label.classList.add("task");
+    label.setAttribute( 'for', `checkbox-${ counter }`);
     label.innerText=taskString;
 
     //input (text)
@@ -61,6 +64,7 @@ var createNewTaskElement=function(taskString){
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
+    counter++;
     return listItem;
 }
 

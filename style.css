@@ -128,6 +128,7 @@
 
 .list-item > .input.checkbox {
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .list-item > .label {
@@ -135,6 +136,7 @@
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
+  cursor: pointer;
 }
 
 .list-item > .input.task {
